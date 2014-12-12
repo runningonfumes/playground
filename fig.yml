@@ -24,3 +24,12 @@ sidekiqmonitor:
     - "3001:3001"
   links:
     - "redis:redis"
+rabbitmq:
+  image: dockerfile/rabbitmq
+  ports:
+    - "5672:5672"
+    - "15672:15672"
+mongodb:
+  image: dockerfile/mongodb
+  ports:
+    - "27017:27017"

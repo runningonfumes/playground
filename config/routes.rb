@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :clients do
+    resources :accounts
+    resources :cards
+    put :name, :on => :member
+  end
 
+  resources :accounts do
+    resources :deposits
+    resources :transfers
+  end
 
-  root 'playground#index'
+  root :to => redirect("/clients")
 
   get 'playground/index'
 
