@@ -1,0 +1,26 @@
+#rails:
+#  build: .
+#  ports:
+#    - "3000:3000"
+#  volumes:
+#    - ./:/usr/src/app
+#  links:
+#    - "postgresql:postgresql"
+#    - "redis:redis"
+#    - "memcache:memcache"
+postgresql:  
+  image: postgres
+  environment:
+    POSTGRES_PASSWORD: "mypassword"
+  ports:
+    - "5432:5432"
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
+sidekiqmonitor:
+  image: runningonfumes/sidekiq-monitor
+  ports:
+    - "3001:3001"
+  links:
+    - "redis:redis"
