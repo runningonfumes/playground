@@ -4,44 +4,40 @@ Playground app to experiment with CQRS, event sourcing, DDD, Docker, Fig, ...
 
 Thanks to the following projects for inspiration:
 
-https://github.com/cavalle/banksimplistic
-https://github.com/emadb/revents
+* https://github.com/cavalle/banksimplistic
+* https://github.com/emadb/revents
 
 more information can also be found here:
 
-https://github.com/padwasabimasala/hexagonal-ruby
+* https://github.com/padwasabimasala/hexagonal-ruby
 
 
-
-* Running the app
+== Running the app
 
 Running the app should be really simple. First install Docker, boot2docker and Fig (http://www.fig.sh/install.html)
 
 Make sure boot2docker is running and check the ip address. If it is not 192.168.59.103 please update the .env file in the root of the project
 
-```
-boot2docker start
-boot2docker ip #=> should be 192.168.59.103
-```
+
+    boot2docker start
+    boot2docker ip #=> should be 192.168.59.103
+
 
 In the root of the project start fig
 
-```
+
     fig build
     fig up
-```
+
 
 This will take a while if it is the first time. But the does make it really simple to start an app depending on redis and mongodb without the need to install all of those dependencies yourself.
 
 Finally start the Rails app
 
-```
+
     bundle install
     foreman start
-```
 
-
-* How to run the test suite
 
 
 == Issue list
