@@ -1,34 +1,50 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Playground app to experiment with CQRS, event sourcing, DDD, Docker, Fig, ...
 
-Things you may want to cover:
+Thanks to the following projects for inspiration:
 
-* Ruby version
+https://github.com/cavalle/banksimplistic
+https://github.com/emadb/revents
 
-* System dependencies
+more information can also be found here:
 
-* Configuration
+https://github.com/padwasabimasala/hexagonal-ruby
 
-* Database creation
 
-* Database initialization
+
+* Running the app
+
+Running the app should be really simple. First install Docker, boot2docker and Fig (http://www.fig.sh/install.html)
+
+Make sure boot2docker is running and check the ip address. If it is not 192.168.59.103 please update the .env file in the root of the project
+
+```
+boot2docker start
+boot2docker ip #=> should be 192.168.59.103
+```
+
+In the root of the project start fig
+
+```
+    fig build
+    fig up
+```
+
+This will take a while if it is the first time. But the does make it really simple to start an app depending on redis and mongodb without the need to install all of those dependencies yourself.
+
+Finally start the Rails app
+
+```
+    bundle install
+    foreman start
+```
+
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
--- Issue list
+== Issue list
 
 * event conflicting resolution
 * Hexagonal Architecture
