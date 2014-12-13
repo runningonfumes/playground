@@ -8,12 +8,6 @@
 #    - "postgresql:postgresql"
 #    - "redis:redis"
 #    - "memcache:memcache"
-postgresql:  
-  image: postgres
-  environment:
-    POSTGRES_PASSWORD: "mypassword"
-  ports:
-    - "5432:5432"
 redis:
   image: redis
   ports:
@@ -24,11 +18,6 @@ sidekiqmonitor:
     - "3001:3001"
   links:
     - "redis:redis"
-rabbitmq:
-  image: dockerfile/rabbitmq
-  ports:
-    - "5672:5672"
-    - "15672:15672"
 mongodb:
   image: dockerfile/mongodb
   ports:
