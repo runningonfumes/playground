@@ -1,4 +1,3 @@
-puts 'loading'
 class ClientReport < Report
   attribute :name
   attribute :city
